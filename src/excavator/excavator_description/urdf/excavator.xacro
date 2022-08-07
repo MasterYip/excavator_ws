@@ -24,9 +24,9 @@
     <!-- Macros -->
 
     <!-- Macro for Transmission -->
-    <xacro:macro name="transmission" params="joint_name">
+    <xacro:macro name="add_trans" params="joint_name">
         <!-- Transmission is important to link the joints and the controller -->
-        <xacro:transmission name="${joint_name}_trans">
+        <transmission name="${joint_name}_trans">
             <type>transmission_interface/SimpleTransmission</type>
             <joint name="${joint_name}" >
                 <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
@@ -35,7 +35,7 @@
                 <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
                 <mechanicalReduction>1</mechanicalReduction>
             </actuator>
-        </xacro:transmission>
+        </transmission>
     </xacro:macro>
 
     <!-- Excavator Model Macro -->
@@ -72,14 +72,14 @@
         </gazebo>
 
         <!-- Transmissions -->
-        <xacro:transmission joint_name="wheel1_joint"/>
-        <xacro:transmission joint_name="wheel4_joint"/>
-        <xacro:transmission joint_name="wheel2_joint"/>
-        <xacro:transmission joint_name="wheel3_joint"/>
-        <!-- <xacro:transmission joint_name="table_joint"/>
-        <xacro:transmission joint_name="link1_joint"/>
-        <xacro:transmission joint_name="link2_joint"/>
-        <xacro:transmission joint_name="ram_joint"/> -->
+        <xacro:add_trans joint_name="wheel1_joint"/>
+        <xacro:add_trans joint_name="wheel4_joint"/>
+        <xacro:add_trans joint_name="wheel2_joint"/>
+        <xacro:add_trans joint_name="wheel3_joint"/>
+        <!-- <xacro:add_trans joint_name="table_joint"/>
+        <xacro:add_trans joint_name="link1_joint"/>
+        <xacro:add_trans joint_name="link2_joint"/>
+        <xacro:add_trans joint_name="ram_joint"/> -->
 
         <!-- Gazebo Plugins -->
         <gazebo>

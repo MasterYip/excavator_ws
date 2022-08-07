@@ -5,7 +5,7 @@
     <!-- 调用宏函数 -->
     <xacro:excavator/>
 
-    <xacro:transmission name="trans_table_joint">
+    <transmission name="trans_table_joint">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="table_joint">
             <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
@@ -14,8 +14,8 @@
             <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
-    </xacro:transmission>
-    <xacro:transmission name="trans_link1_joint">
+    </transmission>
+    <transmission name="trans_link1_joint">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="link1_joint">
             <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
@@ -24,8 +24,8 @@
             <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
-    </xacro:transmission>
-    <xacro:transmission name="trans_link2_joint">
+    </transmission>
+    <transmission name="trans_link2_joint">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="link2_joint">
             <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
@@ -34,8 +34,8 @@
             <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
-    </xacro:transmission>
-    <xacro:transmission name="trans_ram_joint">
+    </transmission>
+    <transmission name="trans_ram_joint">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="ram_joint">
             <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
@@ -44,7 +44,7 @@
             <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
-    </xacro:transmission>
+    </transmission>
     <gazebo>
         <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
             <robotNamespace>/</robotNamespace>
