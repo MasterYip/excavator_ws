@@ -26,7 +26,7 @@
     <!-- Macro for Transmission -->
     <xacro:macro name="transmission" params="joint_name">
         <!-- Transmission is important to link the joints and the controller -->
-        <transmission name="${joint_name}_trans">
+        <xacro:transmission name="${joint_name}_trans">
             <type>transmission_interface/SimpleTransmission</type>
             <joint name="${joint_name}" >
                 <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
@@ -35,7 +35,7 @@
                 <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
                 <mechanicalReduction>1</mechanicalReduction>
             </actuator>
-        </transmission>
+        </xacro:transmission>
     </xacro:macro>
 
     <!-- Excavator Model Macro -->
