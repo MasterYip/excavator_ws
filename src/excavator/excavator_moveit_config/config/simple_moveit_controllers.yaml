@@ -1,0 +1,10 @@
+controller_list:
+  - name: excavator_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - table_joint
+      - link1_joint
+      - link2_joint
+      - ram_joint

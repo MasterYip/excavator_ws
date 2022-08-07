@@ -16,15 +16,6 @@ actionlib::SimpleActionServer<control_msgs::FollowJointTrajectoryAction>::Result
 std::string action_name_;
 
 public:
-// JointTrajectoryActionServer(std::string name):
-// 		as_(nh_, name, boost::bind(&JointTrajectoryActionServer::goalCallback, this, _1), false),
-// 		action_name_(name)
-// {
-// 	// register callback for goal
-// 	// as_.registerGoalCallback(boost::bind(&JointTrajectoryActionServer::goalCallback, this));
-// 	as_.start();
-// }
-
 JointTrajectoryActionServer(std::string name) :
 as_(nh_, name, boost::bind(&JointTrajectoryActionServer::goalCallback, this, _1), false),
 action_name_(name)

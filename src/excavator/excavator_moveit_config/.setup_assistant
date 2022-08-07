@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: excavator_description
+    relative_path: urdf/excavator_gazebo.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/excavator.srdf
+  CONFIG:
+    author_name: MasterYip
+    author_email: 2205929492@qq.com
+    generated_timestamp: 1658843545

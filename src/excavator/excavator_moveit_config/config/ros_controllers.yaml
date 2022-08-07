@@ -1,0 +1,28 @@
+excavator_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - table_joint
+    - link1_joint
+    - link2_joint
+    - ram_joint
+  gains:
+    table_joint:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    link1_joint:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    link2_joint:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    ram_joint:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
