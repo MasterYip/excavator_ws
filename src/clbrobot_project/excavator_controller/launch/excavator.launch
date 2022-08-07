@@ -1,0 +1,11 @@
+<launch>
+    <node name="excavator_controller" pkg="excavator_controller" type="excavator_controller"/>
+    <!-- <node name="excavator_jointstate_publisher" pkg="excavator_controller" type="excavator_jointstate_publisher"/> -->
+
+    <include file="$(find excavator_moveit_config)/launch/demo.launch" pass_all_args="true">
+        <arg name="moveit_controller_manager" value="simple" />
+    </include>
+
+
+
+</launch>

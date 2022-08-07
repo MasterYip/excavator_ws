@@ -1,0 +1,43 @@
+<robot
+  name="rikirobot_urdf">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.000696188967146645 0.163272021227987 -0.000607217382858456"
+        rpy="0 0 0" />
+      <mass
+        value="0.660191000507613" />
+      <inertia
+        ixx="0.00567975310417273"
+        ixy="-9.77470734692922E-06"
+        ixz="-2.68154002028894E-07"
+        iyy="0.0126223384503646"
+        iyz="6.06006073177121E-06"
+        izz="0.00757120415744098" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rikirobot_urdf/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rikirobot_urdf/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

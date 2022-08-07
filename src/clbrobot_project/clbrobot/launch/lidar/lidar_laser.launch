@@ -1,0 +1,3 @@
+<launch>
+  <include file="$(find clbrobot)/launch/lidar/$(env RIKILIDAR).launch" />
+</launch>

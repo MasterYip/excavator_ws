@@ -1,0 +1,7 @@
+<launch>
+  <node pkg="tf" type="static_transform_publisher" name="base_link_to_laser" 
+	    args="0.0 0 0.0 0 0 0 /base_link /scan 100" />
+  <include file="$(find clbrobot)/launch/depth_camera/astra/astra_laser.launch"/> 
+  <include file="$(find clbrobot)/param/navigation/xtion_gmapping.xml"/> 
+  <!--include file="$(find clbrobot)/param/xtion_move_base.xml"/-->
+</launch>
