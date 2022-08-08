@@ -2,7 +2,8 @@
 <!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
      Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
-<robot name="excavator" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="excavator"
+    xmlns:xacro="http://www.ros.org/wiki/xacro">
     <!-- PROPERTY LIST -->
     <xacro:property name="M_PI" value="3.1415926"/>
     <!-- Notsure -->
@@ -28,7 +29,7 @@
         <!-- Transmission is important to link the joints and the controller -->
         <transmission name="${joint_name}_trans">
             <type>transmission_interface/SimpleTransmission</type>
-            <joint name="${joint_name}" >
+            <joint name="${joint_name}">
                 <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
             </joint>
             <actuator name="${joint_name}_motor">
@@ -83,8 +84,7 @@
 
         <!-- Gazebo Plugins -->
         <gazebo>
-            <plugin name="differential_drive_controller_front" 
-                    filename="libgazebo_ros_diff_drive.so">
+            <plugin name="differential_drive_controller_front" filename="libgazebo_ros_diff_drive.so">
                 <rosDebugLevel>Debug</rosDebugLevel>
                 <publishWheelTF>true</publishWheelTF>
                 <robotNamespace>/</robotNamespace>
@@ -101,13 +101,12 @@
                 <wheelTorque>30</wheelTorque>
                 <wheelAcceleration>1.8</wheelAcceleration>
                 <commandTopic>cmd_vel</commandTopic>
-                <odometryFrame>odom</odometryFrame> 
-                <odometryTopic>odom</odometryTopic> 
+                <odometryFrame>odom</odometryFrame>
+                <odometryTopic>odom</odometryTopic>
                 <robotBaseFrame>base_footprint</robotBaseFrame>
             </plugin>
 
-            <plugin name="differential_drive_controller_back" 
-                    filename="libgazebo_ros_diff_drive.so">
+            <plugin name="differential_drive_controller_back" filename="libgazebo_ros_diff_drive.so">
                 <rosDebugLevel>Debug</rosDebugLevel>
                 <publishWheelTF>true</publishWheelTF>
                 <robotNamespace>/</robotNamespace>
@@ -124,8 +123,8 @@
                 <wheelTorque>30</wheelTorque>
                 <wheelAcceleration>1.8</wheelAcceleration>
                 <commandTopic>cmd_vel</commandTopic>
-                <odometryFrame>odom</odometryFrame> 
-                <odometryTopic>odom</odometryTopic> 
+                <odometryFrame>odom</odometryFrame>
+                <odometryTopic>odom</odometryTopic>
                 <robotBaseFrame>base_footprint</robotBaseFrame>
             </plugin>
         </gazebo>
@@ -143,7 +142,7 @@
             <turnGravityOff>false</turnGravityOff>
         </gazebo>
         <joint name="base_footprint_joint" type="fixed">
-            <origin xyz="0 0 0" rpy="0 0 0" /> 
+            <origin xyz="0 0 0" rpy="0 0 0" />
             <!-- Height? -->
             <parent link="base_footprint"/>
             <child link="chassis" />
@@ -154,501 +153,282 @@
         <!-- chassis -->
         <link name="chassis">
             <inertial>
-                <origin
-                xyz="0.0044428 -5.5511E-17 -0.010796"
-                rpy="0 0 0" />
-                <mass
-                value="10.503" />
-                <inertia
-                ixx="0.029632"
-                ixy="1.9665E-18"
-                ixz="-9.9529E-05"
-                iyy="0.059252"
-                iyz="1.8828E-16"
-                izz="0.086263" />
+                <origin xyz="0.0044428 -5.5511E-17 -0.010796" rpy="0 0 0" />
+                <mass value="10.503" />
+                <inertia ixx="0.029632" ixy="1.9665E-18" ixz="-9.9529E-05" iyy="0.059252" iyz="1.8828E-16" izz="0.086263" />
             </inertial>
             <visual>
-                <origin
-                xyz="0 0 0"
-                rpy="0 0 0" />
+                <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
-                <mesh
-                    filename="package://excavator_description/meshes/chassis.STL" />
+                    <mesh filename="package://excavator_description/meshes/chassis.STL" />
                 </geometry>
-                <material
-                name="">
-                <color
-                    rgba="0.52941 0.54902 0.54902 1" />
+                <material name="">
+                    <color rgba="0.52941 0.54902 0.54902 1" />
                 </material>
             </visual>
             <collision>
-                <origin
-                xyz="0 0 0"
-                rpy="0 0 0" />
+                <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
-                <mesh
-                    filename="package://excavator_description/meshes/chassis.STL" />
+                    <mesh filename="package://excavator_description/meshes/chassis.STL" />
                 </geometry>
             </collision>
         </link>
         <!-- wheel1 -->
         <link name="wheel1">
             <inertial>
-                <origin
-                xyz="0 -0.0095819 7.2858E-17"
-                rpy="0 0 0" />
-                <mass
-                value="0.41779" />
-                <inertia
-                ixx="0.00011232"
-                ixy="1.3277E-20"
-                ixz="2.9754E-21"
-                iyy="0.00019137"
-                iyz="-5.9467E-19"
-                izz="0.00010559" />
+                <origin xyz="0 -0.0095819 7.2858E-17" rpy="0 0 0" />
+                <mass value="0.41779" />
+                <inertia ixx="0.00011232" ixy="1.3277E-20" ixz="2.9754E-21" iyy="0.00019137" iyz="-5.9467E-19" izz="0.00010559" />
             </inertial>
             <visual>
-                <origin
-                xyz="0 0 0"
-                rpy="0 0 0" />
+                <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
-                <mesh
-                    filename="package://excavator_description/meshes/wheel1.STL" />
+                    <mesh filename="package://excavator_description/meshes/wheel1.STL" />
                 </geometry>
-                <material
-                name="">
-                <color
-                    rgba="0.8 0.4 0.4 1" />
+                <material name="">
+                    <color rgba="0.8 0.4 0.4 1" />
                 </material>
             </visual>
             <collision>
-                <origin
-                xyz="0 0 0"
-                rpy="0 0 0" />
+                <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
-                <mesh
-                    filename="package://excavator_description/meshes/wheel1.STL" />
+                    <mesh filename="package://excavator_description/meshes/wheel1.STL" />
                 </geometry>
             </collision>
         </link>
         <!-- wheel1_joint -->
         <joint name="wheel1_joint" type="continuous">
-        <origin
-            xyz="0.13707 -0.08 -0.01"
-            rpy="0 0 0" />
-        <parent
-            link="chassis" />
-        <child
-            link="wheel1" />
-        <axis
-            xyz="0 1 0" />
-        <limit
-            effort="100"
-            velocity="6" />
+            <origin xyz="0.13707 -0.08 -0.01" rpy="0 0 0" />
+            <parent link="chassis" />
+            <child link="wheel1" />
+            <axis xyz="0 1 0" />
+            <limit effort="100" velocity="6" />
         </joint>
         <!-- wheel2 -->
         <link name="wheel2">
             <inertial>
-                <origin
-                xyz="0 -0.0095819 7.2858E-17"
-                rpy="0 0 0" />
-                <mass
-                value="0.41779" />
-                <inertia
-                ixx="0.00011232"
-                ixy="1.3277E-20"
-                ixz="2.9754E-21"
-                iyy="0.00019137"
-                iyz="-5.9486E-19"
-                izz="0.00010559" />
+                <origin xyz="0 -0.0095819 7.2858E-17" rpy="0 0 0" />
+                <mass value="0.41779" />
+                <inertia ixx="0.00011232" ixy="1.3277E-20" ixz="2.9754E-21" iyy="0.00019137" iyz="-5.9486E-19" izz="0.00010559" />
             </inertial>
             <visual>
-                <origin
-                xyz="0 0 0"
-                rpy="0 0 0" />
+                <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
-                <mesh
-                    filename="package://excavator_description/meshes/wheel2.STL" />
+                    <mesh filename="package://excavator_description/meshes/wheel2.STL" />
                 </geometry>
-                <material
-                name="carbon_steel">
-                <color
-                    rgba="0.4 0.8 0.4 1" />
+                <material name="carbon_steel">
+                    <color rgba="0.4 0.8 0.4 1" />
                 </material>
             </visual>
             <collision>
-                <origin
-                xyz="0 0 0"
-                rpy="0 0 0" />
+                <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
-                <mesh
-                    filename="package://excavator_description/meshes/wheel2.STL" />
+                    <mesh filename="package://excavator_description/meshes/wheel2.STL" />
                 </geometry>
             </collision>
         </link>
         <!-- wheel2_joint -->
         <joint name="wheel2_joint" type="continuous">
-        <origin
-            xyz="-0.12293 -0.08 -0.01"
-            rpy="0 0 0" />
-        <parent
-            link="chassis" />
-        <child
-            link="wheel2" />
-        <axis
-            xyz="0 1 0" />
-        <limit
-            effort="100"
-            velocity="6" />
+            <origin xyz="-0.12293 -0.08 -0.01" rpy="0 0 0" />
+            <parent link="chassis" />
+            <child link="wheel2" />
+            <axis xyz="0 1 0" />
+            <limit effort="100" velocity="6" />
         </joint>
         <!-- wheel3 -->
         <link name="wheel3">
-        <inertial>
-            <origin
-            xyz="0 0.0095819 1.7347E-18"
-            rpy="0 0 0" />
-            <mass
-            value="0.41779" />
-            <inertia
-            ixx="0.00011232"
-            ixy="1.6502E-21"
-            ixz="-7.4622E-22"
-            iyy="0.00019137"
-            iyz="3.3884E-22"
-            izz="0.00010559" />
-        </inertial>
-        <visual>
-            <origin
-            xyz="0 0 0"
-            rpy="0 0 0" />
-            <geometry>
-            <mesh
-                filename="package://excavator_description/meshes/wheel3.STL" />
-            </geometry>
-            <material
-            name="">
-            <color
-                rgba="0.4 0.8 0.4 1" />
-            </material>
-        </visual>
-        <collision>
-            <origin
-            xyz="0 0 0"
-            rpy="0 0 0" />
-            <geometry>
-            <mesh
-                filename="package://excavator_description/meshes/wheel3.STL" />
-            </geometry>
-        </collision>
+            <inertial>
+                <origin xyz="0 0.0095819 1.7347E-18" rpy="0 0 0" />
+                <mass value="0.41779" />
+                <inertia ixx="0.00011232" ixy="1.6502E-21" ixz="-7.4622E-22" iyy="0.00019137" iyz="3.3884E-22" izz="0.00010559" />
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://excavator_description/meshes/wheel3.STL" />
+                </geometry>
+                <material name="">
+                    <color rgba="0.4 0.8 0.4 1" />
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://excavator_description/meshes/wheel3.STL" />
+                </geometry>
+            </collision>
 
         </link>
         <!-- wheel3_joint -->
         <joint name="wheel3_joint" type="continuous">
-        <origin
-            xyz="-0.12293 0.08 -0.01"
-            rpy="0 0 0" />
-        <parent
-            link="chassis" />
-        <child
-            link="wheel3" />
-        <axis
-            xyz="0 1 0" />
-        <limit
-            effort="100"
-            velocity="6" />
+            <origin xyz="-0.12293 0.08 -0.01" rpy="0 0 0" />
+            <parent link="chassis" />
+            <child link="wheel3" />
+            <axis xyz="0 1 0" />
+            <limit effort="100" velocity="6" />
         </joint>
         <!-- wheel4 -->
         <link name="wheel4">
-        <inertial>
-            <origin
-            xyz="0 0.0095819 1.7347E-18"
-            rpy="0 0 0" />
-            <mass
-            value="0.41779" />
-            <inertia
-            ixx="0.00011232"
-            ixy="-3.3874E-22"
-            ixz="-6.774E-22"
-            iyy="0.00019137"
-            iyz="-7.2041E-23"
-            izz="0.00010559" />
-        </inertial>
-        <visual>
-            <origin
-            xyz="0 0 0"
-            rpy="0 0 0" />
-            <geometry>
-            <mesh
-                filename="package://excavator_description/meshes/wheel4.STL" />
-            </geometry>
-            <material
-            name="">
-            <color
-                rgba="0.8 0.4 0.4 1" />
-            </material>
-        </visual>
-        <collision>
-            <origin
-            xyz="0 0 0"
-            rpy="0 0 0" />
-            <geometry>
-            <mesh
-                filename="package://excavator_description/meshes/wheel4.STL" />
-            </geometry>
-        </collision>
+            <inertial>
+                <origin xyz="0 0.0095819 1.7347E-18" rpy="0 0 0" />
+                <mass value="0.41779" />
+                <inertia ixx="0.00011232" ixy="-3.3874E-22" ixz="-6.774E-22" iyy="0.00019137" iyz="-7.2041E-23" izz="0.00010559" />
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://excavator_description/meshes/wheel4.STL" />
+                </geometry>
+                <material name="">
+                    <color rgba="0.8 0.4 0.4 1" />
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://excavator_description/meshes/wheel4.STL" />
+                </geometry>
+            </collision>
 
         </link>
         <!-- wheel4_joint -->
         <joint name="wheel4_joint" type="continuous">
-        <origin
-            xyz="0.13707 0.08 -0.01"
-            rpy="0 0 0" />
-        <parent
-            link="chassis" />
-        <child
-            link="wheel4" />
-        <axis
-            xyz="0 1 0" />
-        <limit
-            effort="100"
-            velocity="6" />
+            <origin xyz="0.13707 0.08 -0.01" rpy="0 0 0" />
+            <parent link="chassis" />
+            <child link="wheel4" />
+            <axis xyz="0 1 0" />
+            <limit effort="100" velocity="6" />
         </joint>
         <!-- rotary_table -->
         <link name="rotary_table">
-        <inertial>
-            <origin
-            xyz="-0.019642 0 -0.023246"
-            rpy="0 0 0" />
-            <mass
-            value="7.9013" />
-            <inertia
-            ixx="0.011962"
-            ixy="6.9038E-19"
-            ixz="0.00047677"
-            iyy="0.02967"
-            iyz="-2.1419E-19"
-            izz="0.037554" />
-        </inertial>
-        <visual>
-            <origin
-            xyz="0 0 0"
-            rpy="0 0 0" />
-            <geometry>
-            <mesh
-                filename="package://excavator_description/meshes/rotary_table.STL" />
-            </geometry>
-            <material
-            name="">
-            <color
-                rgba="0.8 0.8 0.2 1" />
-            </material>
-        </visual>
-        <collision>
-            <origin
-            xyz="0 0 0"
-            rpy="0 0 0" />
-            <geometry>
-            <mesh
-                filename="package://excavator_description/meshes/rotary_table.STL" />
-            </geometry>
-        </collision>
+            <inertial>
+                <origin xyz="-0.019642 0 -0.023246" rpy="0 0 0" />
+                <mass value="7.9013" />
+                <inertia ixx="0.011962" ixy="6.9038E-19" ixz="0.00047677" iyy="0.02967" iyz="-2.1419E-19" izz="0.037554" />
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://excavator_description/meshes/rotary_table.STL" />
+                </geometry>
+                <material name="">
+                    <color rgba="0.8 0.8 0.2 1" />
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://excavator_description/meshes/rotary_table.STL" />
+                </geometry>
+            </collision>
 
         </link>
         <!-- table_joint -->
         <joint name="table_joint" type="revolute">
-        <origin
-            xyz="0 0 0.06"
-            rpy="0 0 0" />
-        <parent
-            link="chassis" />
-        <child
-            link="rotary_table" />
-        <axis
-            xyz="0 0 1" />
-        <limit
-            lower="-3.14"
-            upper="3.14"
-            effort="100"
-            velocity="0.3" />
-        <!-- <limit
-            effort="100"
-            velocity="0.3" /> -->
+            <origin xyz="0 0 0.06" rpy="0 0 0" />
+            <parent link="chassis" />
+            <child link="rotary_table" />
+            <axis xyz="0 0 1" />
+            <limit lower="-3.14" upper="3.14" effort="100" velocity="0.3" />
+            <!-- <limit effort="100" velocity="0.3" /> -->
         </joint>
         <!-- link1 -->
         <link name="link1">
-        <inertial>
-            <origin
-            xyz="0.14601 0 0.026479"
-            rpy="0 0 0" />
-            <mass
-            value="3.1679" />
-            <inertia
-            ixx="0.0012454"
-            ixy="1.0477E-18"
-            ixz="-0.00014937"
-            iyy="0.017992"
-            iyz="-7.4545E-21"
-            izz="0.017576" />
-        </inertial>
-        <visual>
-            <origin
-            xyz="0 0 0"
-            rpy="0 0 0" />
-            <geometry>
-            <mesh
-                filename="package://excavator_description/meshes/link1.STL" />
-            </geometry>
-            <material
-            name="">
-            <color
-                rgba="0.2 0.8 0.2 1" />
-            </material>
-        </visual>
-        <collision>
-            <origin
-            xyz="0 0 0"
-            rpy="0 0 0" />
-            <geometry>
-            <mesh
-                filename="package://excavator_description/meshes/link1.STL" />
-            </geometry>
-        </collision>
+            <inertial>
+                <origin xyz="0.14601 0 0.026479" rpy="0 0 0" />
+                <mass value="3.1679" />
+                <inertia ixx="0.0012454" ixy="1.0477E-18" ixz="-0.00014937" iyy="0.017992" iyz="-7.4545E-21" izz="0.017576" />
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://excavator_description/meshes/link1.STL" />
+                </geometry>
+                <material name="">
+                    <color rgba="0.2 0.8 0.2 1" />
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://excavator_description/meshes/link1.STL" />
+                </geometry>
+            </collision>
 
 
         </link>
         <!-- link1_joint -->
         <joint name="link1_joint" type="revolute">
-        <origin
-            xyz="0 0 0.035"
-            rpy="0 0 0" />
-        <parent
-            link="rotary_table" />
-        <child
-            link="link1" />
-        <axis
-            xyz="0 -1 0" />
-        <limit
-            lower="-0.4712"
-            upper="0.9948"
-            effort="100"
-            velocity="0.1833" />
+            <origin xyz="0 0 0.035" rpy="0 0 0" />
+            <parent link="rotary_table" />
+            <child link="link1" />
+            <axis xyz="0 -1 0" />
+            <limit lower="-0.4712" upper="0.9948" effort="100" velocity="0.1833" />
         </joint>
         <!-- link2 -->
         <link name="link2">
-        <inertial>
-            <origin
-            xyz="0.0046466 0 -0.061405"
-            rpy="0 0 0" />
-            <mass
-            value="0.71332" />
-            <inertia
-            ixx="0.0016883"
-            ixy="-9.3138E-21"
-            ixz="-7.8609E-05"
-            iyy="0.0017151"
-            iyz="-2.6287E-19"
-            izz="7.4285E-05" />
-        </inertial>
-        <visual>
-            <origin
-            xyz="0 0 0"
-            rpy="0 0 0" />
-            <geometry>
-            <mesh
-                filename="package://excavator_description/meshes/link2.STL" />
-            </geometry>
-            <material
-            name="">
-            <color
-                rgba="0.2 0.2 0.8 1" />
-            </material>
-        </visual>
-        <collision>
-            <origin
-            xyz="0 0 0"
-            rpy="0 0 0" />
-            <geometry>
-            <mesh
-                filename="package://excavator_description/meshes/link2.STL" />
-            </geometry>
-        </collision>
+            <inertial>
+                <origin xyz="0.0046466 0 -0.061405" rpy="0 0 0" />
+                <mass value="0.71332" />
+                <inertia ixx="0.0016883" ixy="-9.3138E-21" ixz="-7.8609E-05" iyy="0.0017151" iyz="-2.6287E-19" izz="7.4285E-05" />
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://excavator_description/meshes/link2.STL" />
+                </geometry>
+                <material name="">
+                    <color rgba="0.2 0.2 0.8 1" />
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://excavator_description/meshes/link2.STL" />
+                </geometry>
+            </collision>
 
         </link>
         <!-- link2_joint -->
         <joint name="link2_joint" type="revolute">
-        <origin
-            xyz="0.3 0 0"
-            rpy="0 0 0" />
-        <parent
-            link="link1" />
-        <child
-            link="link2" />
-        <axis
-            xyz="0 -1 0" />
-        <limit
-            lower="-0.6458"
-            upper="0.9425"
-            effort="100"
-            velocity="0.3971" />
+            <origin xyz="0.3 0 0" rpy="0 0 0" />
+            <parent link="link1" />
+            <child link="link2" />
+            <axis xyz="0 -1 0" />
+            <limit lower="-0.6458" upper="0.9425" effort="100" velocity="0.3971" />
         </joint>
         <!-- battering_ram -->
         <link name="battering_ram">
-        <inertial>
-            <origin
-            xyz="0.032425 0 -0.022861"
-            rpy="0 0 0" />
-            <mass
-            value="0.90994" />
-            <inertia
-            ixx="0.00053829"
-            ixy="2.8859E-20"
-            ixz="3.1376E-05"
-            iyy="0.00064632"
-            iyz="-1.4686E-19"
-            izz="0.00024578" />
-        </inertial>
-        <visual>
-            <origin
-            xyz="0 0 0"
-            rpy="0 0 0" />
-            <geometry>
-            <mesh
-                filename="package://excavator_description/meshes/battering_ram.STL" />
-            </geometry>
-            <material
-            name="">
-            <color
-                rgba="0.52941 0.54902 0.54902 1" />
-            </material>
-        </visual>
-        <collision>
-            <origin
-            xyz="0 0 0"
-            rpy="0 0 0" />
-            <geometry>
-            <mesh
-                filename="package://excavator_description/meshes/battering_ram.STL" />
-            </geometry>
-        </collision>
+            <inertial>
+                <origin xyz="0.032425 0 -0.022861" rpy="0 0 0" />
+                <mass value="0.90994" />
+                <inertia ixx="0.00053829" ixy="2.8859E-20" ixz="3.1376E-05" iyy="0.00064632" iyz="-1.4686E-19" izz="0.00024578" />
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://excavator_description/meshes/battering_ram.STL" />
+                </geometry>
+                <material name="">
+                    <color rgba="0.52941 0.54902 0.54902 1" />
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://excavator_description/meshes/battering_ram.STL" />
+                </geometry>
+            </collision>
 
 
         </link>
         <!-- ram_joint -->
         <joint name="ram_joint" type="revolute">
-        <origin
-            xyz="0 0 -0.1555"
-            rpy="0 0 0" />
-        <parent
-            link="link2" />
-        <child
-            link="battering_ram" />
-        <axis
-            xyz="0 -1 0" />
-        <limit
-            lower="-1.7453"
-            upper="0"
-            effort="100"
-            velocity="0.5818" />
+            <origin xyz="0 0 -0.1555" rpy="0 0 0" />
+            <parent link="link2" />
+            <child link="battering_ram" />
+            <axis xyz="0 -1 0" />
+            <limit lower="-1.7453" upper="0" effort="100" velocity="0.5818" />
         </joint>
         <!--================================SolidWorks urdf file Ends================================-->
     </xacro:macro>
