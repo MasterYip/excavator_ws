@@ -34,7 +34,6 @@ controller_list:
       - link1_joint
       - link2_joint
       - ram_joint
-      
 arm_controller:
   type: position_controllers/JointTrajectoryController
   joints:
