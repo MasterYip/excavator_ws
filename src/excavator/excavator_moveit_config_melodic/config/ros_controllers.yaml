@@ -25,7 +25,7 @@ joint_state_controller:
   type: joint_state_controller/JointStateController
   publish_rate: 50
 controller_list:
-  - name: arm_controller
+  - name: excavator_controller
     action_ns: follow_joint_trajectory
     default: True
     type: FollowJointTrajectory
@@ -34,8 +34,7 @@ controller_list:
       - link1_joint
       - link2_joint
       - ram_joint
-      
-arm_controller:
+excavator_controller:
   type: position_controllers/JointTrajectoryController
   joints:
     - table_joint
