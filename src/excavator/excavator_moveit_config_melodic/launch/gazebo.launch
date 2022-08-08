@@ -3,10 +3,13 @@
   <arg name="paused" default="false"/>
   <arg name="gazebo_gui" default="true"/>
   <arg name="urdf_path" default="$(find excavator_description)/urdf/excavator_with_kinect_gazebo.xacro"/>
+  <arg name="initial_joint_positions" doc="Initial joint configuration of the robot"
+       default=" -J link1_joint 0.6 -J link2_joint 0 -J ram_joint 0 -J table_joint 0"/>
 
   <!-- startup simulated world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" default="worlds/empty.world"/>
+    <!-- Movegroup will die if it is TRUE -->
     <arg name="paused" value="$(arg paused)"/>
     <arg name="gui" value="$(arg gazebo_gui)"/>
   </include>
@@ -15,8 +18,11 @@
   <!-- Melodic do not support xacro parsing automaticly, so using xacro manually -->
   <param name="robot_description" command="$(find xacro)/xacro --inorder '$(arg urdf_path)'" />
 
+  <!-- unpause only after loading robot model -->
+  <arg name="unpause" value="$(eval '' if arg('paused') else '-unpause')" />
   <!-- push robot_description to factory and spawn robot in gazebo at the origin, change x,y,z arguments to spawn in a different position -->
-  <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot -x 0 -y 0 -z 0"
+  <arg name="world_pose" value="-x 0 -y 0 -z 0" />
+  <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot $(arg unpause) $(arg world_pose) $(arg initial_joint_positions)"
     respawn="false" output="screen" />
 
   <include file="$(find excavator_moveit_config_melodic)/launch/ros_controllers.launch"/>
