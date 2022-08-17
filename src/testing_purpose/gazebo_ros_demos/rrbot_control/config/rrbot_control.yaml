@@ -1,3 +1,4 @@
+# Is this namespace?
 rrbot:
   # Publish all joint states -----------------------------------
   joint_state_controller:
