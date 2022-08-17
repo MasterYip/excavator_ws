@@ -148,3 +148,30 @@ arm:
     - SPARStwo
   projection_evaluator: joints(table_joint,link1_joint)
   longest_valid_segment_fraction: 0.005
+wheels:
+  planner_configs:
+    - SBL
+    - EST
+    - LBKPIECE
+    - BKPIECE
+    - KPIECE
+    - RRT
+    - RRTConnect
+    - RRTstar
+    - TRRT
+    - PRM
+    - PRMstar
+    - FMT
+    - BFMT
+    - PDST
+    - STRIDE
+    - BiTRRT
+    - LBTRRT
+    - BiEST
+    - ProjEST
+    - LazyPRM
+    - LazyPRMstar
+    - SPARS
+    - SPARStwo
+  projection_evaluator: joints(wheel1_joint,wheel2_joint)
+  longest_valid_segment_fraction: 0.005

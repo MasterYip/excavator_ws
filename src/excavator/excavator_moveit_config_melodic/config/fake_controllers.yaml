@@ -6,6 +6,13 @@ controller_list:
       - link1_joint
       - link2_joint
       - ram_joint
+  - name: fake_wheels_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - wheel1_joint
+      - wheel2_joint
+      - wheel3_joint
+      - wheel4_joint
 initial:  # Define initial robot poses.
   - group: arm
     pose: home

@@ -22,3 +22,23 @@ joint_limits:
     max_velocity: 0.3
     has_acceleration_limits: false
     max_acceleration: 0
+  wheel1_joint:
+    has_velocity_limits: true
+    max_velocity: 6
+    has_acceleration_limits: false
+    max_acceleration: 0
+  wheel2_joint:
+    has_velocity_limits: true
+    max_velocity: 6
+    has_acceleration_limits: false
+    max_acceleration: 0
+  wheel3_joint:
+    has_velocity_limits: true
+    max_velocity: 6
+    has_acceleration_limits: false
+    max_acceleration: 0
+  wheel4_joint:
+    has_velocity_limits: true
+    max_velocity: 6
+    has_acceleration_limits: false
+    max_acceleration: 0

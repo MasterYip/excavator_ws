@@ -73,17 +73,18 @@
         </gazebo>
 
         <!-- Transmissions -->
-        <xacro:add_trans joint_name="wheel1_joint"/>
+        <!-- <xacro:add_trans joint_name="wheel1_joint"/>
         <xacro:add_trans joint_name="wheel4_joint"/>
         <xacro:add_trans joint_name="wheel2_joint"/>
-        <xacro:add_trans joint_name="wheel3_joint"/>
+        <xacro:add_trans joint_name="wheel3_joint"/> -->
         <!-- <xacro:add_trans joint_name="table_joint"/>
         <xacro:add_trans joint_name="link1_joint"/>
         <xacro:add_trans joint_name="link2_joint"/>
         <xacro:add_trans joint_name="ram_joint"/> -->
 
         <!-- Gazebo Plugins -->
-        <gazebo>
+        <!-- Seems that diff drive controller has been blocked out by ros_control -->
+        <!-- <gazebo>
             <plugin name="differential_drive_controller_front" filename="libgazebo_ros_diff_drive.so">
                 <rosDebugLevel>Debug</rosDebugLevel>
                 <publishWheelTF>true</publishWheelTF>
@@ -127,8 +128,47 @@
                 <odometryTopic>odom</odometryTopic>
                 <robotBaseFrame>base_footprint</robotBaseFrame>
             </plugin>
-        </gazebo>
-
+        </gazebo> -->
+        <transmission name="trans_wheel1_joint">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="wheel1_joint">
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="wheel1_joint_motor">
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+        <transmission name="trans_wheel2_joint">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="wheel2_joint">
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="wheel2_joint_motor">
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+        <transmission name="trans_wheel3_joint">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="wheel3_joint">
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="wheel3_joint_motor">
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+        <transmission name="trans_wheel4_joint">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="wheel4_joint">
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="wheel4_joint_motor">
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
         <transmission name="trans_table_joint">
             <type>transmission_interface/SimpleTransmission</type>
             <joint name="table_joint">

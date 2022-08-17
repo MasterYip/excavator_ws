@@ -34,6 +34,15 @@ controller_list:
       - link1_joint
       - link2_joint
       - ram_joint
+  - name: wheels_controller
+    action_ns: follow_joint_trajectory
+    default: True
+    type: FollowJointTrajectory
+    joints:
+      - wheel1_joint
+      - wheel2_joint
+      - wheel3_joint
+      - wheel4_joint
 excavator_controller:
   type: position_controllers/JointTrajectoryController
   joints:
@@ -58,6 +67,34 @@ excavator_controller:
       i: 1
       i_clamp: 1
     ram_joint:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+wheels_controller:
+  type: velocity_controllers/JointVelocityController
+  joints:
+    - wheel1_joint
+    - wheel2_joint
+    - wheel3_joint
+    - wheel4_joint
+  gains:
+    wheel1_joint:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    wheel2_joint:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    wheel3_joint:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    wheel4_joint:
       p: 100
       d: 1
       i: 1
