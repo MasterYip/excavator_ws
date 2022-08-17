@@ -4,8 +4,8 @@
     <xacro:include filename="$(find excavator_description)/urdf/excavator.xacro" />
     <xacro:include filename="$(find excavator_description)/urdf/sensors/kinect_gazebo.xacro" />
 
-    <xacro:property name="kinect_offset_x" value="-0.05" />
-    <xacro:property name="kinect_offset_y" value="0" />
+    <xacro:property name="kinect_offset_x" value="-0.1" />
+    <xacro:property name="kinect_offset_y" value="0.1" />
     <xacro:property name="kinect_offset_z" value="0.12" />
 
     <!-- kinect -->
