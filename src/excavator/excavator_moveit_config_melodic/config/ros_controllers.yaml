@@ -72,7 +72,7 @@ excavator_controller:
       i: 1
       i_clamp: 1
 wheels_controller:
-  type: velocity_controllers/JointVelocityController
+  type: velocity_controllers/JointTrajectoryController
   joints:
     - wheel1_joint
     - wheel2_joint
