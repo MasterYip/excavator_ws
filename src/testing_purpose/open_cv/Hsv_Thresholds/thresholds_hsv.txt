@@ -1,0 +1,19 @@
+black_board:  low_range: [73 60 41]up_range: [107 225 168]
+orange_screwdriver:  low_range: [145  11 247]up_range: [179 164 255]
+red_note_book:  low_range: [  0 147 140]up_range: [  4 238 194]
+red_note_book:  low_range: [163 153 136]up_range: [179 240 193]
+tyres:  low_range: [100 138 167]up_range: [124 201 240]
+Green:  low_range: [ 63 226 114]up_range: [ 85 255 191]
+light_blue:  low_range: [103 160 109]up_range: [129 215 176]
+baby_duck:  low_range: (13,134,108)up_range:  (36,214,191)
+
+bottle_cap:  low_range: (113,91,132)up_range:  (129,156,192)
+Ford:  low_range: (100,90,124)up_range:  (128,157,255)
+Bluebound:  low_range: (96,95,119)up_range:  (127,208,255)
+green_circle:  low_range: (27,129,149)up_range:  (56,196,191)
+Green_general:  low_range: (33,89,70)up_range:  (90,255,168)
+black_stick:  low_range: (109,78,29)up_range:  (137,217,182)
+Stick_bgr1:  BGR low_range: (26,16,0)up_range:  (102,44,47)
+stick_wide:  low_range: (56,60,0)up_range:  (129,255,156)
+yellow_stick:  low_range: (14,80,125)up_range:  (55,255,203)
+yellow:  low_range: (0,90,172)up_range:  (32,172,255)
