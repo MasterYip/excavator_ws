@@ -39,12 +39,21 @@ void goalCallback(const control_msgs::FollowJointTrajectoryGoalConstPtr& goal)
 	//此处修改了源码 由 FollowJointTrajectoryGoal 改为 FollowJointTrajectoryActionGoal不知是否合理
 	// boost::shared_ptr<const control_msgs::FollowJointTrajectoryGoal> goal;
 	sensor_msgs::JointState target_joint_state;
+	int point_count = 0;
+	int point_size = goal->trajectory.points.size();
+	//赋予初值 使得容器可被下标检索
 	target_joint_state.name.assign(
 		goal->trajectory.joint_names.begin(),
 		goal->trajectory.joint_names.end());
-
-	int point_count = 0;
-	int point_size = goal->trajectory.points.size();
+	target_joint_state.position.assign(
+		goal->trajectory.points[point_count].positions.begin(),
+		goal->trajectory.points[point_count].positions.end());
+	target_joint_state.velocity.assign(
+		goal->trajectory.points[point_count].velocities.begin(),
+		goal->trajectory.points[point_count].velocities.end());
+	target_joint_state.effort.assign(
+		goal->trajectory.points[point_count].effort.begin(),
+		goal->trajectory.points[point_count].effort.end());
 
 	//接受任务目标？
 	// goal=as_.acceptNewGoal();
@@ -76,36 +85,30 @@ void goalCallback(const control_msgs::FollowJointTrajectoryGoalConstPtr& goal)
 		target_joint_state.header.stamp = ros::Time::now();
 		target_joint_state.header.seq = point_count;
 
-		// target_joint_state.position.assign(
-		// 	goal->trajectory.points[point_count].positions.begin(),
-		// 	goal->trajectory.points[point_count].positions.end());
-		// target_joint_state.velocity.assign(
-		// 	goal->trajectory.points[point_count].velocities.begin(),
-		// 	goal->trajectory.points[point_count].velocities.end());
-		// target_joint_state.effort.assign(
-		// 	goal->trajectory.points[point_count].effort.begin(),
-		// 	goal->trajectory.points[point_count].effort.end());
-
 		for(int cnt=0; cnt<4; cnt++)
 		{
-			ROS_INFO(target_joint_state.name[cnt]);
-			if(target_joint_state.name[cnt] == "table_joint")
+			ROS_INFO(goal->trajectory.joint_names[cnt]);
+			if(goal->trajectory.joint_names[cnt] == "table_joint")
 			{
+				target_joint_state.name[0] = goal->trajectory.joint_names[cnt];
 				target_joint_state.position[0] = goal->trajectory.points[point_count].positions[cnt];
 				target_joint_state.velocity[0] = goal->trajectory.points[point_count].velocities[cnt];
 			}
-			else if(target_joint_state.name[cnt] == "link1_joint")
+			else if(goal->trajectory.joint_names[cnt] == "link1_joint")
 			{
+				target_joint_state.name[1] = goal->trajectory.joint_names[cnt];
 				target_joint_state.position[1] = goal->trajectory.points[point_count].positions[cnt];
 				target_joint_state.velocity[1] = goal->trajectory.points[point_count].velocities[cnt];
 			}
-			else if(target_joint_state.name[cnt] == "link2_joint")
+			else if(goal->trajectory.joint_names[cnt] == "link2_joint")
 			{
+				target_joint_state.name[2] = goal->trajectory.joint_names[cnt];
 				target_joint_state.position[2] = goal->trajectory.points[point_count].positions[cnt];
 				target_joint_state.velocity[2] = goal->trajectory.points[point_count].velocities[cnt];
 			}
-			else if(target_joint_state.name[cnt] == "ram_joint")
+			else if(goal->trajectory.joint_names[cnt] == "ram_joint")
 			{
+				target_joint_state.name[3] = goal->trajectory.joint_names[cnt];
 				target_joint_state.position[3] = goal->trajectory.points[point_count].positions[cnt];
 				target_joint_state.velocity[3] = goal->trajectory.points[point_count].velocities[cnt];
 			}
