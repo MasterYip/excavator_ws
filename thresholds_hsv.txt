@@ -1,1 +1,0 @@
-table:  low_range: (0,117,113)up_range:  (40,241,155)
