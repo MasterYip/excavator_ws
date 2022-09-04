@@ -35,7 +35,7 @@ action_name_(name)
 void goalCallback(const control_msgs::FollowJointTrajectoryGoalConstPtr& goal)
 {
 	bool success = true;
-	ros::Rate action_rate(10);
+	ros::Rate action_rate(20);
 	//此处修改了源码 由 FollowJointTrajectoryGoal 改为 FollowJointTrajectoryActionGoal不知是否合理
 	// boost::shared_ptr<const control_msgs::FollowJointTrajectoryGoal> goal;
 	sensor_msgs::JointState target_joint_state;
@@ -87,7 +87,7 @@ void goalCallback(const control_msgs::FollowJointTrajectoryGoalConstPtr& goal)
 
 		for(int cnt=0; cnt<4; cnt++)
 		{
-			ROS_INFO(goal->trajectory.joint_names[cnt]);
+			// ROS_INFO(goal->trajectory.joint_names[cnt]);
 			if(goal->trajectory.joint_names[cnt] == "table_joint")
 			{
 				target_joint_state.name[0] = goal->trajectory.joint_names[cnt];
