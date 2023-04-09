@@ -126,7 +126,8 @@ class MoveGroupPythonInterfaceTutorial(object):
         ## If you are using a different robot, change this value to the name of your robot
         ## arm planning group.
         ## This interface can be used to plan and execute motions:
-        group_name = "excavator_arm"
+        # Name is in config/excavator.srdf
+        group_name = "arm"
         move_group = moveit_commander.MoveGroupCommander(group_name)
 
         ## Create a `DisplayTrajectory`_ ROS publisher which is used to display
@@ -191,9 +192,9 @@ class MoveGroupPythonInterfaceTutorial(object):
         joint_goal[1] = -tau / 8
         joint_goal[2] = 0
         joint_goal[3] = -tau / 4
-        joint_goal[4] = 0
-        joint_goal[5] = tau / 6  # 1/6 of a turn
-        joint_goal[6] = 0
+        # joint_goal[4] = 0
+        # joint_goal[5] = tau / 6  # 1/6 of a turn
+        # joint_goal[6] = 0
 
         # The go command can be called with joint values, poses, or without any
         # parameters if you have already set the pose or joint target for the group
