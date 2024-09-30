@@ -4,12 +4,18 @@ Excavator workspace for Sany excavator robot model.
 
 <!-- Video -->
 <!-- <video src="doc/excavator_op.mp4" width="320" height="200" controls preload></video> -->
-<div class="columns is-centered">
+<!-- <div class="columns is-centered">
     <div class="column content">
         <video id="matting-video" autoplay controls muted loop playsinline height="100%">
             <source src="./doc/excavator_op.mp4" type="video/mp4">
         </video>
     </div>
+</div> -->
+
+<div style="text-align: center;">
+  <video width="600" controls>
+    <source src="doc/excavator_op.mp4" type="video/mp4">
+  </video>
 </div>
 
 ## Quick Start
