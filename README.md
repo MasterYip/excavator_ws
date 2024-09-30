@@ -3,23 +3,16 @@
 Excavator workspace for Sany excavator robot model.
 
 <!-- Video -->
-<!-- <video src="doc/excavator_op.mp4" width="320" height="200" controls preload></video> -->
-<!-- <div class="columns is-centered">
-    <div class="column content">
-        <video id="matting-video" autoplay controls muted loop playsinline height="100%">
-            <source src="./doc/excavator_op.mp4" type="video/mp4">
-        </video>
-    </div>
-</div> -->
+<div style="display:flex; justify-content:center; text-align: center;">
+  <video src="https://github.com/user-attachments/assets/c59453cb-190a-4602-b985-3f2bf36b121a" width="320" height="200" controls preload></video>
+</div>
+<br />
 
-<!-- <div style="text-align: center;">
-  <video width="600" controls>
-    <source src="doc/excavator_op.mp4" type="video/mp4">
-  </video>
-</div> -->
-
-<div style="text-align: center;">
-  <iframe width="560" height="315" src="https://github.com/MasterYip/excavator_ws/blob/using_ros_control/doc/excavator_op.mp4" frameborder="0" allowfullscreen></iframe>
+<div style="display:flex; justify-content:center; text-align: center;">
+    <img src="https://github.com/user-attachments/assets/eb50783f-feac-4404-b666-03ac5298e89d" alt="Image 1" style="height:300px; margin-right:10px;"/>
+</div>
+<div style="display:flex; justify-content:center; text-align: center;">
+    Diagram of Excavator Operation System
 </div>
 
 
