@@ -12,11 +12,16 @@ Excavator workspace for Sany excavator robot model.
     </div>
 </div> -->
 
-<div style="text-align: center;">
+<!-- <div style="text-align: center;">
   <video width="600" controls>
     <source src="doc/excavator_op.mp4" type="video/mp4">
   </video>
+</div> -->
+
+<div style="text-align: center;">
+  <iframe width="560" height="315" src="https://github.com/MasterYip/excavator_ws/blob/using_ros_control/doc/excavator_op.mp4" frameborder="0" allowfullscreen></iframe>
 </div>
+
 
 ## Quick Start
 
