@@ -14,7 +14,6 @@ Find the lower controller source code at [Excavator BCS](https://github.com/Mast
 
 <p align="center">
     <img src="https://github.com/user-attachments/assets/eb50783f-feac-4404-b666-03ac5298e89d" alt="Image 1" style="width:800px"/>
-
 </p>
 <p align="center">
 Diagram of Excavator Operation System
@@ -30,7 +29,9 @@ unset ROS_MASTER_URI ROS_IP ROS_HOSTNAME
 
 ## Auto bringup+gmapping+RGBD+rviz
 
+```bash
 roslaunch clbrobot blended_slam.launch
+```
 
 ## Single Tasks
 
