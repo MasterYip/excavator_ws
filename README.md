@@ -4,6 +4,8 @@
 
 Excavator workspace for SANY excavator robot model.
 
+Find the lower controller source code at [Excavator BCS](https://github.com/MasterYip/excavator_BCS).
+
 <!-- Video -->
 <p align="center">
     <video src="https://github.com/user-attachments/assets/c59453cb-190a-4602-b985-3f2bf36b121a" width="200" height="100" autoplay controls muted loop playsinline></video>
