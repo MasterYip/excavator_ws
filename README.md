@@ -1,6 +1,8 @@
 # Excavator Operation System
 
-Excavator workspace for Sany excavator robot model.
+>**NOTE**: This repo is majorly for learning use, and is **NOT** maintained anymore.
+
+Excavator workspace for SANY excavator robot model.
 
 <!-- Video -->
 <p align="center">
