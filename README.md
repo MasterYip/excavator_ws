@@ -1,3 +1,5 @@
+![EOS](https://github.com/user-attachments/assets/0130eaf8-b501-42ed-8d0d-a1732591d49b)
+
 # Excavator Operation System
 
 >**NOTE**: This repo is majorly for learning use, and is **NOT** maintained anymore.
