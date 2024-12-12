@@ -2,7 +2,8 @@
 
 # Excavator Operation System
 
->**NOTE**: This repo is majorly for learning use, and is **NOT** maintained anymore.
+>[!CAUTION]
+>This repo is majorly for learning use and is **NOT** maintained anymore.
 
 Excavator workspace for SANY excavator robot model.
 
